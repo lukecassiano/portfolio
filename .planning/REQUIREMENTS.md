@@ -100,19 +100,48 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01 to FOUND-07 | Phase 1 | Pending |
-| COMP-01 to COMP-04 | Phase 1 | Pending |
-| LAND-01 to LAND-07 | Phase 2 | Pending |
-| SAND-01 to SAND-06 | Phase 3 | Pending |
-| STUB-01 to STUB-02 | Phase 3 | Pending |
-| META-01 to META-08 | Phase 4 | Pending |
-| DEPLOY-01 to DEPLOY-02 | Phase 4 | Pending |
+| FOUND-01 | Phase 1 — Foundation & Design System | Pending |
+| FOUND-02 | Phase 1 — Foundation & Design System | Pending |
+| FOUND-03 | Phase 1 — Foundation & Design System | Pending |
+| FOUND-04 | Phase 1 — Foundation & Design System | Pending |
+| FOUND-05 | Phase 1 — Foundation & Design System | Pending |
+| FOUND-06 | Phase 1 — Foundation & Design System | Pending |
+| FOUND-07 | Phase 1 — Foundation & Design System | Pending |
+| COMP-01 | Phase 1 — Foundation & Design System | Pending |
+| COMP-02 | Phase 1 — Foundation & Design System | Pending |
+| COMP-03 | Phase 1 — Foundation & Design System | Pending |
+| COMP-04 | Phase 1 — Foundation & Design System | Pending |
+| LAND-01 | Phase 2 — Landing Experience | Pending |
+| LAND-02 | Phase 2 — Landing Experience | Pending |
+| LAND-03 | Phase 2 — Landing Experience | Pending |
+| LAND-04 | Phase 2 — Landing Experience | Pending |
+| LAND-05 | Phase 2 — Landing Experience | Pending |
+| LAND-06 | Phase 2 — Landing Experience | Pending |
+| LAND-07 | Phase 2 — Landing Experience | Pending |
+| SAND-01 | Phase 3 — Sandbar Case Study & Stubs | Pending |
+| SAND-02 | Phase 3 — Sandbar Case Study & Stubs | Pending |
+| SAND-03 | Phase 3 — Sandbar Case Study & Stubs | Pending |
+| SAND-04 | Phase 3 — Sandbar Case Study & Stubs | Pending |
+| SAND-05 | Phase 3 — Sandbar Case Study & Stubs | Pending |
+| SAND-06 | Phase 3 — Sandbar Case Study & Stubs | Pending |
+| STUB-01 | Phase 3 — Sandbar Case Study & Stubs | Pending |
+| STUB-02 | Phase 3 — Sandbar Case Study & Stubs | Pending |
+| META-01 | Phase 4 — Polish, Meta & Deploy | Pending |
+| META-02 | Phase 4 — Polish, Meta & Deploy | Pending |
+| META-03 | Phase 4 — Polish, Meta & Deploy | Pending |
+| META-04 | Phase 4 — Polish, Meta & Deploy | Pending |
+| META-05 | Phase 4 — Polish, Meta & Deploy | Pending |
+| META-06 | Phase 4 — Polish, Meta & Deploy | Pending |
+| META-07 | Phase 4 — Polish, Meta & Deploy | Pending |
+| META-08 | Phase 4 — Polish, Meta & Deploy | Pending |
+| DEPLOY-01 | Phase 4 — Polish, Meta & Deploy | Pending |
+| DEPLOY-02 | Phase 4 — Polish, Meta & Deploy | Pending |
 
 **Coverage:**
-- v1 requirements: 33 total
+- v1 requirements: 33 total (FOUND: 7, COMP: 4, LAND: 7, SAND: 6, STUB: 2, META: 8, DEPLOY: 2)
 - Mapped to phases: 33
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-06-02*
-*Last updated: 2026-06-02 after initial definition*
+*Last updated: 2026-06-02 — traceability expanded to per-requirement rows after roadmap creation*
