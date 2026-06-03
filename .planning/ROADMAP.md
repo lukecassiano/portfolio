@@ -60,7 +60,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Section headings render in Fraunces; metadata and captions render in IBM Plex Mono; hero stat(s) are large Fraunces numerals
   4. A back navigation element on /sandbar returns the visitor to the landing page
   5. /belief-agent and /whitehelmet each load a hero scene with blob, wordmark, and an honest "case study in progress" message — neither returns a 404
-**Plans**: TBD
+**Plans**: 3 plans
+- [ ] 03-01-PLAN.md — PipelineDiagram inline SVG component (Wave 1)
+- [ ] 03-02-PLAN.md — /belief-agent and /whitehelmet stub pages (Wave 1)
+- [ ] 03-03-PLAN.md — /sandbar editorial case study page (Wave 2, depends on 03-01)
 
 ### Phase 4: Polish, Meta & Deploy
 **Goal**: Every share link for the site shows a proper OG image and title; the site passes a WCAG AA check; it builds without errors and is live at a production Vercel URL.
@@ -84,5 +87,5 @@ Note: Phase 3 depends on Phase 1 only (not Phase 2) — Phases 2 and 3 can be wo
 |-------|----------------|--------|-----------|
 | 1. Foundation & Design System | 1/3 | In Progress|  |
 | 2. Landing Experience | 2/4 | In Progress|  |
-| 3. Sandbar Case Study & Stubs | 0/? | Not started | - |
+| 3. Sandbar Case Study & Stubs | 0/3 | Not started | - |
 | 4. Polish, Meta & Deploy | 0/? | Not started | - |
