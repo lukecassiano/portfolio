@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { fraunces, ibmPlexMono } from '@/lib/fonts'
+import { LenisProvider } from '@/components/providers/LenisProvider'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export default function RootLayout({
       className={`${fraunces.variable} ${ibmPlexMono.variable}`}
     >
       <body className="font-serif bg-cream text-ink antialiased">
-        {children}
+        <LenisProvider>{children}</LenisProvider>
       </body>
     </html>
   )
