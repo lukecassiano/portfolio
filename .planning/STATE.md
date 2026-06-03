@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-04-PLAN.md — Landing page assembled; production build green
-last_updated: "2026-06-03T22:47:49.172Z"
+stopped_at: Phase 3 UI-SPEC approved
+last_updated: "2026-06-03T23:01:34.210Z"
 last_activity: 2026-06-03 — Lenis smooth scroll provider complete; id=main-content confirmed
 progress:
   total_phases: 4
@@ -97,6 +97,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-06-03T22:44:49.935Z
-Stopped at: Completed 02-04-PLAN.md — Landing page assembled; production build green
-Resume file: None
+Last session: 2026-06-03T23:01:34.206Z
+Stopped at: Phase 3 UI-SPEC approved
+Resume file: .planning/phases/03-sandbar-case-study-stubs/03-UI-SPEC.md
