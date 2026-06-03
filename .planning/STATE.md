@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-03-PLAN.md — BeliefAgentScene, WhiteHelmetScene, ReadingTheBreakScene created
-last_updated: "2026-06-03T22:41:50.978Z"
+stopped_at: Completed 02-04-PLAN.md — Landing page assembled; production build green
+last_updated: "2026-06-03T22:44:49.938Z"
 last_activity: 2026-06-03 — Lenis smooth scroll provider complete; id=main-content confirmed
 progress:
   total_phases: 4
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 7
-  completed_plans: 6
+  completed_plans: 7
   percent: 67
 ---
 
@@ -55,6 +55,7 @@ Progress: [███████░░░] 67%
 | Phase 02-landing-experience P01 | 6min | 3 tasks | 3 files |
 | Phase 02-landing-experience P02 | 2min | 2 tasks | 2 files |
 | Phase 02-landing-experience P03 | 5min | 3 tasks | 3 files |
+| Phase 02-landing-experience P04 | 3min | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -81,6 +82,8 @@ Recent decisions affecting current work:
 - [Phase 02-landing-experience]: BeliefAgentScene: scoped Tailwind bg-[#0D0D12] text-cream on section — not a CSS var override; both classes must be adjacent
 - [Phase 02-landing-experience]: WhiteHelmetScene: /whitehelmet CTA intentionally resolves to 404 until Phase 3 case study; link must not be omitted
 - [Phase 02-landing-experience]: ReadingTheBreakScene: SceneLink external prop handles target/rel/sr-only — caller passes boolean only, no manual target in scene
+- [Phase 02-landing-experience]: page.tsx is a Server Component (no 'use client') — client boundary lives in scene leaf components
+- [Phase 02-landing-experience]: Render order locked: Intro, Sandbar, Belief Agent, WhiteHelmet, Reading the Break, Footer in page.tsx
 
 ### Pending Todos
 
@@ -94,6 +97,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-06-03T22:41:50.972Z
-Stopped at: Completed 02-03-PLAN.md — BeliefAgentScene, WhiteHelmetScene, ReadingTheBreakScene created
+Last session: 2026-06-03T22:44:49.935Z
+Stopped at: Completed 02-04-PLAN.md — Landing page assembled; production build green
 Resume file: None
