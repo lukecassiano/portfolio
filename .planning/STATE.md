@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-01-PLAN.md — SceneFadeIn, ScrollHint, SceneLink created
-last_updated: "2026-06-03T22:35:05.473Z"
+stopped_at: Completed 02-02-PLAN.md — IntroScene and SandbarScene created
+last_updated: "2026-06-03T22:38:26.084Z"
 last_activity: 2026-06-03 — Lenis smooth scroll provider complete; id=main-content confirmed
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 7
-  completed_plans: 4
+  completed_plans: 5
   percent: 67
 ---
 
@@ -53,6 +53,7 @@ Progress: [███████░░░] 67%
 | Phase 01-foundation-and-design-system P01 | 102 | 3 tasks | 12 files |
 | Phase 01-foundation-and-design-system P02 | 15min | 3 tasks | 4 files |
 | Phase 02-landing-experience P01 | 6min | 3 tasks | 3 files |
+| Phase 02-landing-experience P02 | 2min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -73,6 +74,9 @@ Recent decisions affecting current work:
 - [Phase 02-landing-experience]: SceneFadeIn: initial set to visible + whileInView omitted when reduced-motion — prevents invisible content (Pitfall 8)
 - [Phase 02-landing-experience]: ScrollHint: raw MotionValue from useTransform, no useSpring — Lenis already eases scroll
 - [Phase 02-landing-experience]: SceneLink: Server Component (no 'use client') — plain anchor, no browser APIs needed
+- [Phase 02-landing-experience]: IntroScene: no GradientBlob — name-only scene stays chromatic-free per LAND-02 spec
+- [Phase 02-landing-experience]: SandbarScene blob position: translateX(-50%) inline only — no Tailwind -translate-x-1/2 to avoid double-transform pitfall
+- [Phase 02-landing-experience]: 87% stat uses wordmark <p> not heading — preserves heading hierarchy (one h1, h2 per scene)
 
 ### Pending Todos
 
@@ -86,6 +90,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-06-03T22:35:05.469Z
-Stopped at: Completed 02-01-PLAN.md — SceneFadeIn, ScrollHint, SceneLink created
+Last session: 2026-06-03T22:38:26.079Z
+Stopped at: Completed 02-02-PLAN.md — IntroScene and SandbarScene created
 Resume file: None
