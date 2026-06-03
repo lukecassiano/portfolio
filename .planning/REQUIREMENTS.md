@@ -7,13 +7,13 @@
 
 ### Foundation
 
-- [ ] **FOUND-01**: Next.js 14 App Router project scaffolded with TypeScript, Tailwind v3, ESLint
-- [ ] **FOUND-02**: Fraunces ExtraBold Italic loaded via next/font/local (variable woff2) with font-variation-settings for SOFT/WONK axes
-- [ ] **FOUND-03**: IBM Plex Mono loaded via next/font/google with weights 400/500
+- [x] **FOUND-01**: Next.js 14 App Router project scaffolded with TypeScript, Tailwind v3, ESLint
+- [x] **FOUND-02**: Fraunces ExtraBold Italic loaded via next/font/local (variable woff2) with font-variation-settings for SOFT/WONK axes
+- [x] **FOUND-03**: IBM Plex Mono loaded via next/font/google with weights 400/500
 - [ ] **FOUND-04**: LenisProvider client component wraps layout with lerp ~0.08, RAF loop, reduced-motion gate, and cleanup
-- [ ] **FOUND-05**: Design token CSS vars on :root (blob color stops, font families, cream base #F5F3EE)
-- [ ] **FOUND-06**: Tailwind config extended with font-serif (Fraunces) and font-mono (IBM Plex Mono) aliases
-- [ ] **FOUND-07**: mdx-components.tsx stub at root + app/blog/.gitkeep for future MDX support
+- [x] **FOUND-05**: Design token CSS vars on :root (blob color stops, font families, cream base #F5F3EE)
+- [x] **FOUND-06**: Tailwind config extended with font-serif (Fraunces) and font-mono (IBM Plex Mono) aliases
+- [x] **FOUND-07**: mdx-components.tsx stub at root + app/blog/.gitkeep for future MDX support
 
 ### Shared Components
 
@@ -100,13 +100,13 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01 | Phase 1 — Foundation & Design System | Pending |
-| FOUND-02 | Phase 1 — Foundation & Design System | Pending |
-| FOUND-03 | Phase 1 — Foundation & Design System | Pending |
+| FOUND-01 | Phase 1 — Foundation & Design System | Complete |
+| FOUND-02 | Phase 1 — Foundation & Design System | Complete |
+| FOUND-03 | Phase 1 — Foundation & Design System | Complete |
 | FOUND-04 | Phase 1 — Foundation & Design System | Pending |
-| FOUND-05 | Phase 1 — Foundation & Design System | Pending |
-| FOUND-06 | Phase 1 — Foundation & Design System | Pending |
-| FOUND-07 | Phase 1 — Foundation & Design System | Pending |
+| FOUND-05 | Phase 1 — Foundation & Design System | Complete |
+| FOUND-06 | Phase 1 — Foundation & Design System | Complete |
+| FOUND-07 | Phase 1 — Foundation & Design System | Complete |
 | COMP-01 | Phase 1 — Foundation & Design System | Pending |
 | COMP-02 | Phase 1 — Foundation & Design System | Pending |
 | COMP-03 | Phase 1 — Foundation & Design System | Pending |
