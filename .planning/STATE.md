@@ -2,17 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: in-progress
-stopped_at: Completed 01-foundation-and-design-system/01-02-PLAN.md (all tasks verified and committed)
-last_updated: "2026-06-03T21:30:00Z"
-last_activity: 2026-06-03 — Lenis smooth scroll provider complete; id=main-content confirmed; 01-02-SUMMARY.md committed
+status: executing
+stopped_at: Completed 02-01-PLAN.md — SceneFadeIn, ScrollHint, SceneLink created
+last_updated: "2026-06-03T22:35:05.473Z"
+last_activity: 2026-06-03 — Lenis smooth scroll provider complete; id=main-content confirmed
 progress:
   total_phases: 4
-  completed_phases: 0
-  total_plans: 3
-  completed_plans: 2
+  completed_phases: 1
+  total_plans: 7
+  completed_plans: 4
   percent: 67
-  current_plan: 3
 ---
 
 # Project State
@@ -53,6 +52,7 @@ Progress: [███████░░░] 67%
 *Updated after each plan completion*
 | Phase 01-foundation-and-design-system P01 | 102 | 3 tasks | 12 files |
 | Phase 01-foundation-and-design-system P02 | 15min | 3 tasks | 4 files |
+| Phase 02-landing-experience P01 | 6min | 3 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -70,6 +70,9 @@ Recent decisions affecting current work:
 - [Phase 01]: Fraunces woff2 sourced from Google Fonts CDN (latin subset, 81KB) — not GitHub TTF
 - [Phase 01]: --font-mono is the CSS var name for IBM Plex Mono (not --font-ibm-plex-mono) — downstream code uses var(--font-mono)
 - [Phase 01]: mdx-components.tsx uses Record<string, unknown> type (no mdx/types dep) to keep next build clean
+- [Phase 02-landing-experience]: SceneFadeIn: initial set to visible + whileInView omitted when reduced-motion — prevents invisible content (Pitfall 8)
+- [Phase 02-landing-experience]: ScrollHint: raw MotionValue from useTransform, no useSpring — Lenis already eases scroll
+- [Phase 02-landing-experience]: SceneLink: Server Component (no 'use client') — plain anchor, no browser APIs needed
 
 ### Pending Todos
 
@@ -83,6 +86,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-06-03T21:17:31Z
-Stopped at: Completed 01-foundation-and-design-system/01-02-PLAN.md
+Last session: 2026-06-03T22:35:05.469Z
+Stopped at: Completed 02-01-PLAN.md — SceneFadeIn, ScrollHint, SceneLink created
 Resume file: None
