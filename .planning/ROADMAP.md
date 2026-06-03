@@ -30,8 +30,8 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. The footer displays a copyable mailto: link; the skip-to-content link is reachable by keyboard; the 404 page matches the design system
   5. Design token CSS vars (blob color stops, font families, cream base) are available globally and Tailwind aliases resolve
 **Plans**: 3 plans
-- [ ] 01-01-PLAN.md — Project scaffold, fonts (Fraunces local + IBM Plex Mono), Tailwind v3, design tokens, MDX stubs
-- [ ] 01-02-PLAN.md — Lenis install + LenisProvider (lerp 0.08, reduced-motion gate, RAF loop) wired into layout
+- [x] 01-01-PLAN.md — Project scaffold, fonts (Fraunces local + IBM Plex Mono), Tailwind v3, design tokens, MDX stubs
+- [x] 01-02-PLAN.md — Lenis install + LenisProvider (lerp 0.08, reduced-motion gate, RAF loop) wired into layout
 - [ ] 01-03-PLAN.md — Shared components: GradientBlob, Footer (copyable mailto), custom 404, SkipLink
 
 ### Phase 2: Landing Experience
