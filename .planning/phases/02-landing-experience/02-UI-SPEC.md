@@ -24,7 +24,7 @@ created: 2026-06-03
 | Component library | none (Radix not used; custom components only) |
 | Icon library | none — chevron rendered as inline SVG or Unicode → |
 | Primary font | Fraunces ExtraBold Italic (variable woff2) via `next/font/local` — CSS var `--font-fraunces`, Tailwind alias `font-serif`, class `.wordmark` |
-| Mono font | IBM Plex Mono via `next/font/google` (weights 400, 500) — CSS var `--font-mono`, Tailwind alias `font-mono` |
+| Mono font | IBM Plex Mono via `next/font/google` (weights ['500'] only) — CSS var `--font-mono`, Tailwind alias `font-mono` |
 
 Source: PROJECT.md (locked), REQUIREMENTS.md (FOUND-02, FOUND-03, FOUND-06), tailwind.config.ts, globals.css confirmed in codebase.
 
@@ -38,7 +38,7 @@ Declared values (multiples of 4 only):
 |-------|-------|-------|
 | xs | 4px | Inline gaps (e.g. stat label to value) |
 | sm | 8px | Compact spacing (e.g. CTA arrow gap) |
-| md | 16px | Default element spacing; paragraph gap |
+| md | 16px | Default element spacing; paragraph gap; post title stacking gap |
 | lg | 24px | Group spacing within a scene (wordmark → tagline → stat) |
 | xl | 32px | Horizontal scene padding on mobile (`px-8`) |
 | 2xl | 48px | Vertical scene padding top/bottom on mobile (`py-12`) |
@@ -54,24 +54,23 @@ Exceptions:
 
 ### Global Rules
 - All headings: `.wordmark` class — `font-family: var(--font-fraunces); font-style: italic; font-weight: 800; font-variation-settings: 'SOFT' 0, 'WONK' 1`
-- All metadata, captions, CTAs, stats: `font-mono` — IBM Plex Mono
-- No third font. No weight outside 400/500 (mono) and 800 (serif).
+- All metadata, captions, CTAs, stats: `font-mono` — IBM Plex Mono weight 500
+- No third font. Exactly 2 weights: 800 (Fraunces serif) and 500 (IBM Plex Mono). Weight 400 is not used anywhere in this phase.
 
 ### Type Scale
 
-| Role | Font | Size | Weight | Line Height | Notes |
-|------|------|------|--------|-------------|-------|
-| Hero name (intro) | Fraunces `.wordmark` | `clamp(56px, 10vw, 120px)` | 800 italic | 1.0 | "Luke Cassiano" — tight leading, single line |
-| Positioning line (intro) | IBM Plex Mono | `clamp(14px, 2vw, 18px)` | 400 | 1.4 | Below hero name; restrained |
-| Project wordmark (scenes) | Fraunces `.wordmark` | `clamp(36px, 6vw, 72px)` | 800 italic | 1.1 | Per-scene project name |
-| Scene tagline | IBM Plex Mono | 16px | 400 | 1.5 | One sentence below wordmark |
-| Hero stat (Sandbar, Belief Agent) | Fraunces `.wordmark` | `clamp(48px, 8vw, 96px)` | 800 italic | 1.0 | Large numeral, single data point |
-| Stat label / unit | IBM Plex Mono | 12px | 500 | 1.4 | Below or beside hero stat |
-| CTA link | IBM Plex Mono | 14px | 500 | 1.0 | "View case study →" |
-| Post titles (Reading the Break) | IBM Plex Mono | 14px | 400 | 1.5 | Three stacked titles |
-| Scroll hint | IBM Plex Mono | 11px | 400 | 1.0 | Bottom of intro scene only |
+Exactly 4 size tokens:
 
-Source: PITFALLS.md (clamp guidance), PROJECT.md (font assignments), RESEARCH.md (hero type collapse pitfall).
+| Token | Font | Size | Weight | Line Height | Covers |
+|-------|------|------|--------|-------------|--------|
+| `display` | Fraunces `.wordmark` | `clamp(56px, 10vw, 120px)` | 800 italic | 1.0 | Hero name (intro) — "Luke Cassiano", single line |
+| `wordmark` | Fraunces `.wordmark` | `clamp(36px, 6vw, 72px)` | 800 italic | 1.1 | Project wordmarks (all scenes) AND hero stats (Sandbar "87%", Belief Agent "0.31") |
+| `body` | IBM Plex Mono | 16px | 500 | 1.5 | Scene taglines AND positioning line (intro) |
+| `label` | IBM Plex Mono | 12px | 500 | 1.4 | Stat labels, CTA links, post titles (Reading the Break), scroll hint |
+
+No other font sizes exist in this phase. Sizes 11px, 14px, 18px, 48px, and 96px are not used.
+
+Source: PITFALLS.md (clamp guidance), PROJECT.md (font assignments), RESEARCH.md (hero type collapse pitfall). Collapsed per checker revision 2026-06-03.
 
 ---
 
@@ -135,14 +134,14 @@ The `relative` + `overflow-hidden` pairing keeps the blob visually contained wit
 
 ```
 Structure (vertical stack, centered):
-  [Hero name]    — "Luke Cassiano" — .wordmark clamp(56px,10vw,120px)
-  [Positioning]  — one line in IBM Plex Mono
+  [Hero name]    — "Luke Cassiano" — .wordmark display token: clamp(56px,10vw,120px)
+  [Positioning]  — one line in IBM Plex Mono body token: 16px weight 500
   [Scroll hint]  — centered at bottom, absolute positioned
 ```
 
 - Positioning line copy: **"Signal into something legible."**
   Source: Derived from PROJECT.md design thesis ("Luke's work translates messy, ambiguous signal into something legible and trustworthy enough to act on").
-- Scroll hint: IBM Plex Mono 11px, ink, text "scroll" + down-chevron `↓` (Unicode 2193), centered horizontally, `absolute bottom-8`. Fades to `opacity: 0` once user scrolls past 80px (Framer Motion `useScroll` on window, no Lenis spring). Hidden if `prefers-reduced-motion` is set.
+- Scroll hint: IBM Plex Mono label token 12px weight 500, ink color, text "scroll" + down-chevron `↓` (Unicode 2193), `letter-spacing: 0.1em`, uppercase, centered horizontally, `absolute bottom-8`. Fades to `opacity: 0` once user scrolls past 80px (Framer Motion `useScroll` on window, no Lenis spring). Hidden if `prefers-reduced-motion` is set.
 - No blob. No other elements.
 
 #### Scene 2: Sandbar
@@ -150,16 +149,17 @@ Structure (vertical stack, centered):
 ```
 Structure (vertical stack, centered, blob behind):
   [GradientBlob] — absolute, behind content
-  [Wordmark]     — "Sandbar" — .wordmark clamp(36px,6vw,72px)
-  [Tagline]      — IBM Plex Mono 16px
-  [Hero stat]    — large Fraunces numeral + mono label below
-  [CTA]          — IBM Plex Mono 14px link
+  [Wordmark]     — "Sandbar" — .wordmark wordmark token: clamp(36px,6vw,72px)
+  [Tagline]      — IBM Plex Mono body token: 16px weight 500
+  [Hero stat]    — Fraunces .wordmark wordmark token: clamp(36px,6vw,72px)
+  [Stat label]   — IBM Plex Mono label token: 12px weight 500
+  [CTA]          — IBM Plex Mono label token: 12px weight 500
 ```
 
 - Tagline copy: **"Agentic surf forecasting."**
-- Hero stat: **"87%"** (Fraunces `.wordmark` `clamp(48px,8vw,96px)`)
-- Stat label below numeral: **"forecast accuracy"** (IBM Plex Mono 12px weight 500, `letter-spacing: 0.08em`, uppercase)
-- CTA: **"View case study →"** — links to `/sandbar`
+- Hero stat: **"87%"** (Fraunces `.wordmark` wordmark token `clamp(36px,6vw,72px)`)
+- Stat label below numeral: **"FORECAST ACCURACY"** (IBM Plex Mono 12px weight 500, `letter-spacing: 0.08em`, uppercase)
+- CTA: **"View case study →"** (IBM Plex Mono 12px weight 500) — links to `/sandbar`
 - Background: cream `#F5F3EE`
 
 #### Scene 3: Belief Agent
@@ -167,16 +167,17 @@ Structure (vertical stack, centered, blob behind):
 ```
 Structure (vertical stack, centered, blob behind):
   [GradientBlob] — absolute, behind content, right-offset
-  [Wordmark]     — "Belief Agent" — .wordmark clamp(36px,6vw,72px) — cream text
-  [Tagline]      — IBM Plex Mono 16px — cream text
-  [Entropy stat] — large Fraunces numeral + mono label below — cream text
+  [Wordmark]     — "Belief Agent" — .wordmark wordmark token: clamp(36px,6vw,72px) — cream text
+  [Tagline]      — IBM Plex Mono body token: 16px weight 500 — cream text
+  [Entropy stat] — Fraunces .wordmark wordmark token: clamp(36px,6vw,72px) — cream text
+  [Stat label]   — IBM Plex Mono label token: 12px weight 500 — cream text
 ```
 
 - Background: `#0D0D12` — applied via Tailwind inline style or `bg-[#0D0D12]`
 - All text: cream `#F5F3EE`
 - Tagline copy: **"Modeling latent belief states."**
-- Hero stat: **"0.31"** (Fraunces `.wordmark` `clamp(48px,8vw,96px)`)
-- Stat label: **"mean entropy at convergence"** (IBM Plex Mono 12px weight 500, uppercase, `letter-spacing: 0.08em`)
+- Hero stat: **"0.31"** (Fraunces `.wordmark` wordmark token `clamp(36px,6vw,72px)`)
+- Stat label: **"MEAN ENTROPY AT CONVERGENCE"** (IBM Plex Mono 12px weight 500, uppercase, `letter-spacing: 0.08em`)
 - No CTA link in v1 — no page to link to yet (case study pending Phase 3)
 
 #### Scene 4: WhiteHelmet
@@ -184,32 +185,32 @@ Structure (vertical stack, centered, blob behind):
 ```
 Structure (vertical stack, centered, blob behind):
   [GradientBlob] — absolute, behind content, bottom-centered
-  [Wordmark]     — "WhiteHelmet" — .wordmark clamp(36px,6vw,72px)
-  [Tagline]      — IBM Plex Mono 16px
-  [CTA]          — IBM Plex Mono 14px link
+  [Wordmark]     — "WhiteHelmet" — .wordmark wordmark token: clamp(36px,6vw,72px)
+  [Tagline]      — IBM Plex Mono body token: 16px weight 500
+  [CTA]          — IBM Plex Mono label token: 12px weight 500
 ```
 
 - Background: cream `#F5F3EE`
 - Tagline copy: **"AI workflow for construction intelligence."**
-- CTA: **"View case study →"** — links to `/whitehelmet`
+- CTA: **"View case study →"** (IBM Plex Mono 12px weight 500) — links to `/whitehelmet`
 
 #### Scene 5: Reading the Break
 
 ```
 Structure (vertical stack, centered, blob behind):
   [GradientBlob] — absolute, centered behind
-  [Wordmark]     — "Reading the Break" — .wordmark clamp(36px,6vw,72px)
-  [Post titles]  — 3 stacked IBM Plex Mono 14px items
-  [CTA]          — IBM Plex Mono 14px external link
+  [Wordmark]     — "Reading the Break" — .wordmark wordmark token: clamp(36px,6vw,72px)
+  [Post titles]  — 3 stacked IBM Plex Mono label token: 12px weight 500 items
+  [CTA]          — IBM Plex Mono label token: 12px weight 500 external link
 ```
 
 - Background: cream `#F5F3EE`
-- Three placeholder post titles (IBM Plex Mono 14px weight 400, `leading-relaxed`, stacked with `gap-3`):
+- Three placeholder post titles (IBM Plex Mono 12px weight 500, `leading-relaxed`, stacked with `gap-4` — `md` spacing token, 16px):
   1. **"On Reading the Ocean as a Bayesian Prior"**
   2. **"Jazz, Entropy, and the Shape of a Good Guess"**
   3. **"What Surfing Taught Me About Latent State"**
   Source: Derived from PROJECT.md blog description ("jazz/surfing/belief modeling") to match the project's intellectual register.
-- CTA: **"Read on Substack →"** — opens `https://lukecassiano.substack.com` in new tab (`target="_blank" rel="noopener noreferrer"`)
+- CTA: **"Read on Substack →"** (IBM Plex Mono 12px weight 500) — opens `https://lukecassiano.substack.com` in new tab (`target="_blank" rel="noopener noreferrer"`)
 
 ---
 
@@ -248,11 +249,11 @@ No per-element stagger within a scene. The entire content group fades as one uni
 ### CTA Link Style
 
 ```
-font-mono text-sm font-medium tracking-wide text-ink
+font-mono text-xs font-medium tracking-wide text-ink
 hover:opacity-60 transition-opacity duration-200
 ```
 
-- No underline at rest. No underline on hover. Opacity transition only.
+- `text-xs` = 12px (label token). No underline at rest. No underline on hover. Opacity transition only.
 - Arrow `→` is a Unicode character in the text string, not an icon component.
 - External links: `target="_blank" rel="noopener noreferrer"` + visually hidden "(opens in new tab)" span for screen readers.
 
@@ -262,7 +263,7 @@ hover:opacity-60 transition-opacity duration-200
 position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
 ```
 
-- Content: `scroll ↓` — IBM Plex Mono 11px weight 400, ink color, `letter-spacing: 0.1em`, uppercase
+- Content: `scroll ↓` — IBM Plex Mono 12px weight 500, ink color, `letter-spacing: 0.1em`, uppercase
 - Fade-out: `useScroll` on `window`, `useTransform(scrollY, [0, 80], [1, 0])` → `style={{ opacity }}` on the hint container
 - Reduced-motion: omit entirely (conditional render `if (!prefersReduced)`)
 - Touch target: surrounding `div` has `p-3` to ensure 44px tap area
@@ -304,7 +305,7 @@ Components to be built for this phase, referencing existing shared components:
 |-----------|------|-----------|---------|
 | `IntroScene` | `components/scenes/IntroScene.tsx` | `ScrollHint` | Yes (motion) |
 | `ScrollHint` | `components/ui/ScrollHint.tsx` | — | Yes (useScroll) |
-| `SandsarScene` | `components/scenes/SandbarScene.tsx` | `GradientBlob`, `SceneLink` | Yes (motion) |
+| `SandbarScene` | `components/scenes/SandbarScene.tsx` | `GradientBlob`, `SceneLink` | Yes (motion) |
 | `BeliefAgentScene` | `components/scenes/BeliefAgentScene.tsx` | `GradientBlob`, no CTA | Yes (motion) |
 | `WhiteHelmetScene` | `components/scenes/WhiteHelmetScene.tsx` | `GradientBlob`, `SceneLink` | Yes (motion) |
 | `ReadingTheBreakScene` | `components/scenes/ReadingTheBreakScene.tsx` | `GradientBlob`, `SceneLink` | Yes (motion) |
@@ -314,6 +315,17 @@ Components to be built for this phase, referencing existing shared components:
 `GradientBlob`, `Footer`, `SkipLink` already exist from Phase 1 (confirmed in codebase).
 
 `SceneFadeIn` is a thin motion.div wrapper component that accepts children and applies the fade-in contract above. All scene components use it. This keeps 'use client' scoped to the animated wrapper, not the full scene.
+
+### Typography Class Reference
+
+| Token | Tailwind classes |
+|-------|-----------------|
+| `display` | `font-serif italic font-extrabold` + inline style `fontSize: 'clamp(56px, 10vw, 120px)'` |
+| `wordmark` | `font-serif italic font-extrabold` + inline style `fontSize: 'clamp(36px, 6vw, 72px)'` |
+| `body` | `font-mono font-medium text-base` (16px) |
+| `label` | `font-mono font-medium text-xs` (12px) |
+
+IBM Plex Mono loaded with `weights: ['500']` only. No `font-normal` or `font-light` classes used for `font-mono` anywhere in this phase.
 
 ### Page Assembly
 
