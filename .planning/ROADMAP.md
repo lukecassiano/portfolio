@@ -44,7 +44,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Each project scene's blob is visually dominant before any text is read; Sandbar is pink→lavender→blue, Belief Agent is indigo→phosphor green on near-black, WhiteHelmet is ochre→dust, Reading the Break is coral→amber
   4. Clicking the Sandbar or WhiteHelmet scene link navigates to the correct route; the Reading the Break link opens Substack in a new tab
   5. Scene content fades in on scroll entry; turning on prefers-reduced-motion skips all fade animations without breaking layout
-**Plans**: TBD
+**Plans**: 4 plans
+- [ ] 02-01-PLAN.md — Shared leaf components: SceneFadeIn (fade-in wrapper), ScrollHint, SceneLink
+- [ ] 02-02-PLAN.md — IntroScene + SandbarScene (scene-shell pattern, h1 name, /sandbar CTA)
+- [ ] 02-03-PLAN.md — BeliefAgentScene (dark inversion) + WhiteHelmetScene + ReadingTheBreakScene
+- [ ] 02-04-PLAN.md — app/page.tsx assembly (five scenes + Footer) and production build verify
 
 ### Phase 3: Sandbar Case Study & Stubs
 **Goal**: A recruiter clicking through from the Sandbar landing scene arrives at a full editorial case study that reads problem → insight → product → under the hood → what's next, with the pipeline diagram crisp at every viewport width; Belief Agent and WhiteHelmet routes resolve to honest in-progress pages rather than 404s.
@@ -79,6 +83,6 @@ Note: Phase 3 depends on Phase 1 only (not Phase 2) — Phases 2 and 3 can be wo
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Design System | 1/3 | In Progress|  |
-| 2. Landing Experience | 0/? | Not started | - |
+| 2. Landing Experience | 0/4 | Not started | - |
 | 3. Sandbar Case Study & Stubs | 0/? | Not started | - |
 | 4. Polish, Meta & Deploy | 0/? | Not started | - |
