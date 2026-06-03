@@ -27,9 +27,9 @@
 - [x] **LAND-01**: 5 full-viewport scenes using h-[100svh], vertically stacked, soft Lenis guidance
 - [x] **LAND-02**: Intro scene — name "Luke Cassiano" in Fraunces ExtraBold Italic, one positioning line, nothing else
 - [x] **LAND-03**: Sandbar scene — wordmark in Fraunces Italic, tagline, one hero stat, link to /sandbar; pink→lavender→blue blob
-- [ ] **LAND-04**: Belief Agent scene — near-black (#0D0D12) background, wordmark + tagline + entropy stat; deep indigo→phosphor green blob
-- [ ] **LAND-05**: WhiteHelmet scene — cream background, wordmark + tagline, link to /whitehelmet; ochre→dust blob
-- [ ] **LAND-06**: Reading the Break scene — warm sunset blob, 3 placeholder post titles, external Substack link
+- [x] **LAND-04**: Belief Agent scene — near-black (#0D0D12) background, wordmark + tagline + entropy stat; deep indigo→phosphor green blob
+- [x] **LAND-05**: WhiteHelmet scene — cream background, wordmark + tagline, link to /whitehelmet; ochre→dust blob
+- [x] **LAND-06**: Reading the Break scene — warm sunset blob, 3 placeholder post titles, external Substack link
 - [x] **LAND-07**: Framer Motion fade-in on scene content (one reveal per scene, triggered by scroll entry); gated behind prefers-reduced-motion
 
 ### Sandbar Case Study
@@ -114,9 +114,9 @@
 | LAND-01 | Phase 2 — Landing Experience | Complete |
 | LAND-02 | Phase 2 — Landing Experience | Complete |
 | LAND-03 | Phase 2 — Landing Experience | Complete |
-| LAND-04 | Phase 2 — Landing Experience | Pending |
-| LAND-05 | Phase 2 — Landing Experience | Pending |
-| LAND-06 | Phase 2 — Landing Experience | Pending |
+| LAND-04 | Phase 2 — Landing Experience | Complete |
+| LAND-05 | Phase 2 — Landing Experience | Complete |
+| LAND-06 | Phase 2 — Landing Experience | Complete |
 | LAND-07 | Phase 2 — Landing Experience | Complete |
 | SAND-01 | Phase 3 — Sandbar Case Study & Stubs | Pending |
 | SAND-02 | Phase 3 — Sandbar Case Study & Stubs | Pending |

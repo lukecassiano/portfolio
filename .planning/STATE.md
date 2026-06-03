@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-02-PLAN.md — IntroScene and SandbarScene created
-last_updated: "2026-06-03T22:38:26.084Z"
+stopped_at: Completed 02-03-PLAN.md — BeliefAgentScene, WhiteHelmetScene, ReadingTheBreakScene created
+last_updated: "2026-06-03T22:41:50.978Z"
 last_activity: 2026-06-03 — Lenis smooth scroll provider complete; id=main-content confirmed
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 7
-  completed_plans: 5
+  completed_plans: 6
   percent: 67
 ---
 
@@ -54,6 +54,7 @@ Progress: [███████░░░] 67%
 | Phase 01-foundation-and-design-system P02 | 15min | 3 tasks | 4 files |
 | Phase 02-landing-experience P01 | 6min | 3 tasks | 3 files |
 | Phase 02-landing-experience P02 | 2min | 2 tasks | 2 files |
+| Phase 02-landing-experience P03 | 5min | 3 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -77,6 +78,9 @@ Recent decisions affecting current work:
 - [Phase 02-landing-experience]: IntroScene: no GradientBlob — name-only scene stays chromatic-free per LAND-02 spec
 - [Phase 02-landing-experience]: SandbarScene blob position: translateX(-50%) inline only — no Tailwind -translate-x-1/2 to avoid double-transform pitfall
 - [Phase 02-landing-experience]: 87% stat uses wordmark <p> not heading — preserves heading hierarchy (one h1, h2 per scene)
+- [Phase 02-landing-experience]: BeliefAgentScene: scoped Tailwind bg-[#0D0D12] text-cream on section — not a CSS var override; both classes must be adjacent
+- [Phase 02-landing-experience]: WhiteHelmetScene: /whitehelmet CTA intentionally resolves to 404 until Phase 3 case study; link must not be omitted
+- [Phase 02-landing-experience]: ReadingTheBreakScene: SceneLink external prop handles target/rel/sr-only — caller passes boolean only, no manual target in scene
 
 ### Pending Todos
 
@@ -90,6 +94,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-06-03T22:38:26.079Z
-Stopped at: Completed 02-02-PLAN.md — IntroScene and SandbarScene created
+Last session: 2026-06-03T22:41:50.972Z
+Stopped at: Completed 02-03-PLAN.md — BeliefAgentScene, WhiteHelmetScene, ReadingTheBreakScene created
 Resume file: None
