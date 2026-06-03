@@ -1,16 +1,19 @@
+import { IntroScene } from '@/components/scenes/IntroScene'
+import { SandbarScene } from '@/components/scenes/SandbarScene'
+import { BeliefAgentScene } from '@/components/scenes/BeliefAgentScene'
+import { WhiteHelmetScene } from '@/components/scenes/WhiteHelmetScene'
+import { ReadingTheBreakScene } from '@/components/scenes/ReadingTheBreakScene'
+import { Footer } from '@/components/ui/Footer'
+
 export default function Home() {
   return (
     <main id="main-content">
-      <section className="min-h-[100svh] flex flex-col items-center justify-center gap-4 p-8">
-        <h1 className="wordmark text-6xl">Luke Cassiano</h1>
-        <p className="font-mono text-sm">Scroll down — Lenis smooth scroll active.</p>
-      </section>
-      <section className="min-h-[100svh] flex items-center justify-center bg-cream">
-        <p className="font-mono text-sm">Section two</p>
-      </section>
-      <section className="min-h-[100svh] flex items-center justify-center bg-cream">
-        <p className="font-mono text-sm">Section three</p>
-      </section>
+      <IntroScene />
+      <SandbarScene />
+      <BeliefAgentScene />
+      <WhiteHelmetScene />
+      <ReadingTheBreakScene />
+      <Footer />
     </main>
   )
 }
