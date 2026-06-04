@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 3 UI-SPEC approved
-last_updated: "2026-06-03T23:01:34.210Z"
+stopped_at: Completed 03-01-PLAN.md (PipelineDiagram component)
+last_updated: "2026-06-04T00:34:22.267Z"
 last_activity: 2026-06-03 — Lenis smooth scroll provider complete; id=main-content confirmed
 progress:
   total_phases: 4
   completed_phases: 2
-  total_plans: 7
-  completed_plans: 7
+  total_plans: 10
+  completed_plans: 8
   percent: 67
 ---
 
@@ -56,6 +56,7 @@ Progress: [███████░░░] 67%
 | Phase 02-landing-experience P02 | 2min | 2 tasks | 2 files |
 | Phase 02-landing-experience P03 | 5min | 3 tasks | 3 files |
 | Phase 02-landing-experience P04 | 3min | 2 tasks | 1 files |
+| Phase 03-sandbar-case-study-stubs P01 | 5min | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -84,6 +85,8 @@ Recent decisions affecting current work:
 - [Phase 02-landing-experience]: ReadingTheBreakScene: SceneLink external prop handles target/rel/sr-only — caller passes boolean only, no manual target in scene
 - [Phase 02-landing-experience]: page.tsx is a Server Component (no 'use client') — client boundary lives in scene leaf components
 - [Phase 02-landing-experience]: Render order locked: Intro, Sandbar, Belief Agent, WhiteHelmet, Reading the Break, Footer in page.tsx
+- [Phase 03-sandbar-case-study-stubs]: PipelineDiagram: defs block placed after title (before rects) so marker is defined before first line reference — SVG rendering order correctness
+- [Phase 03-sandbar-case-study-stubs]: PipelineDiagram: named export (not default) matching import pattern in plan 03-03 app/sandbar/page.tsx
 
 ### Pending Todos
 
@@ -97,6 +100,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-06-03T23:01:34.206Z
-Stopped at: Phase 3 UI-SPEC approved
-Resume file: .planning/phases/03-sandbar-case-study-stubs/03-UI-SPEC.md
+Last session: 2026-06-04T00:34:22.264Z
+Stopped at: Completed 03-01-PLAN.md (PipelineDiagram component)
+Resume file: None

@@ -87,5 +87,5 @@ Note: Phase 3 depends on Phase 1 only (not Phase 2) — Phases 2 and 3 can be wo
 |-------|----------------|--------|-----------|
 | 1. Foundation & Design System | 1/3 | In Progress|  |
 | 2. Landing Experience | 2/4 | In Progress|  |
-| 3. Sandbar Case Study & Stubs | 0/3 | Not started | - |
+| 3. Sandbar Case Study & Stubs | 2/3 | In Progress|  |
 | 4. Polish, Meta & Deploy | 0/? | Not started | - |
