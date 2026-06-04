@@ -1,15 +1,9 @@
-import localFont from 'next/font/local'
-import { IBM_Plex_Mono } from 'next/font/google'
+import { Syne, IBM_Plex_Mono } from 'next/font/google'
 
-export const fraunces = localFont({
-  src: [
-    {
-      path: '../app/fonts/Fraunces-Italic-VF.woff2',
-      style: 'italic',
-      weight: '100 900',
-    },
-  ],
-  variable: '--font-fraunces',
+export const syne = Syne({
+  weight: ['700', '800'],
+  subsets: ['latin'],
+  variable: '--font-syne',
   display: 'swap',
 })
 

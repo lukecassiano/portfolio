@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
-import { fraunces, ibmPlexMono } from '@/lib/fonts'
+import { syne, ibmPlexMono } from '@/lib/fonts'
 import { LenisProvider } from '@/components/providers/LenisProvider'
 import { SkipLink } from '@/components/ui/SkipLink'
+import { CustomCursor } from '@/components/ui/CustomCursor'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -17,10 +18,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${ibmPlexMono.variable}`}
+      className={`${syne.variable} ${ibmPlexMono.variable}`}
     >
-      <body className="font-serif bg-cream text-ink antialiased">
+      <body className="bg-cream text-ink antialiased">
         <SkipLink />
+        <CustomCursor />
         <LenisProvider>{children}</LenisProvider>
       </body>
     </html>

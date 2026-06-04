@@ -1,18 +1,148 @@
 import { IntroScene } from '@/components/scenes/IntroScene'
-import { SandbarScene } from '@/components/scenes/SandbarScene'
-import { BeliefAgentScene } from '@/components/scenes/BeliefAgentScene'
-import { WhiteHelmetScene } from '@/components/scenes/WhiteHelmetScene'
-import { ReadingTheBreakScene } from '@/components/scenes/ReadingTheBreakScene'
+import { ProjectCard } from '@/components/work/ProjectCard'
+import { FlowingContours } from '@/components/belief/FlowingContours'
 import { Footer } from '@/components/ui/Footer'
 
 export default function Home() {
   return (
     <main id="main-content">
       <IntroScene />
-      <SandbarScene />
-      <BeliefAgentScene />
-      <WhiteHelmetScene />
-      <ReadingTheBreakScene />
+
+      <section
+        aria-label="Selected Work"
+        className="px-6 pt-16 pb-28 md:px-10 md:pt-28 md:pb-40"
+      >
+        <div className="mx-auto max-w-5xl">
+          {/* Section intro */}
+          <header className="mb-12 md:mb-16 flex flex-col gap-4">
+            <p className="font-mono font-medium text-xs uppercase tracking-[0.22em] text-ink/50">
+              Selected Work
+            </p>
+            <p
+              className="font-mono font-medium leading-snug max-w-2xl text-ink/90"
+              style={{ fontSize: 'clamp(18px, 2.4vw, 28px)' }}
+            >
+              Three products and a research project — each one about turning ambiguous
+              signal into something you can actually act on.
+            </p>
+          </header>
+
+          <div className="flex flex-col gap-6 md:gap-8">
+            <ProjectCard
+              index="01"
+              category="Product"
+              status="Live · Beta"
+              title="Sandbar"
+              tagline="Surf forecasting that tells you when to paddle out — not just what the conditions are."
+              body={[
+                'Tools like Surfline dump raw swell, wind, and tide data and leave you to interpret it. Sandbar predicts surf-quality windows for a specific break, collapsing that data into a simple timeline — fair, good, best, declining — plus board-aware recommendations tuned to what you actually ride.',
+                'It ingests live buoy observations and NOAA grid forecasts, scores them against how a break behaves under given conditions, and answers the only question that matters: when should I go?',
+              ]}
+              specs={[
+                { label: 'Role', value: 'Solo — product, ML, design' },
+                { label: 'Focus', value: 'Surf-window prediction, board-aware scoring' },
+                { label: 'Stack', value: 'Python · forecast ingestion · ensemble scoring' },
+                { label: 'Status', value: 'Private beta' },
+              ]}
+              links={[
+                { label: 'Live demo', href: 'https://sandbar-ai-production.up.railway.app/', external: true },
+                { label: 'Case study', href: '/sandbar' },
+              ]}
+              blob={{
+                colors: ['#F4A8C7', '#C4B5FD', '#93C5FD'],
+                position: { top: '-30%', right: '-10%' },
+                blur: '70px',
+                duration: 15,
+              }}
+            />
+
+            <ProjectCard
+              index="02"
+              category="Research"
+              status="Open source"
+              title="Belief Agent"
+              tagline="A multi-agent system that reasons under uncertainty — and learns when not to trust what it's told."
+              tone="dark"
+              align="right"
+              backdrop={<FlowingContours />}
+              body={[
+                'Two Bayesian agents — a Sensor agent and a Language agent — each hold an explicit belief distribution over the world, track their own entropy, and exchange precision-weighted messages instead of raw answers.',
+                "The core finding: when two information sources differ in reliability, unidirectional, precision-weighted communication beats symmetric fusion. Letting the weaker agent listen to the stronger one — but not the reverse — prevents the belief collapse and misinformation cascades that naive message-passing creates under noise.",
+              ]}
+              specs={[
+                { label: 'Role', value: 'Solo — research + implementation' },
+                { label: 'Focus', value: 'Bayesian inference, entropy gating, precision-weighted comms' },
+                { label: 'Stack', value: 'Python · NumPy · Streamlit' },
+                { label: 'Status', value: 'Live demo + open source' },
+              ]}
+              links={[
+                { label: 'Live demo', href: 'https://belief-agent.streamlit.app/', external: true },
+                { label: 'Case study', href: '/belief-agent' },
+                { label: 'GitHub', href: 'https://github.com/lukecassiano/belief-agent', external: true },
+              ]}
+              blob={{
+                colors: ['#312E81', '#4ADE80'],
+                position: { top: '-20%', left: '-15%' },
+                blur: '90px',
+                duration: 18,
+              }}
+            />
+
+            <ProjectCard
+              index="03"
+              category="Product · Team"
+              status="Case study"
+              title="WhiteHelmet"
+              tagline="AI that turns a mess of subcontractor spreadsheets into one master report you can trust."
+              tone="dark"
+              body={[
+                'Built with a Product Space team for WhiteHelmet, a construction-intelligence platform. Project managers lose hours reconciling inconsistent subcontractor files into a single source of truth. The product, Salama, ingests heterogeneous sheets and consolidates them into one structured master dataset.',
+                'I owned AI consolidation and master-template generation: parsing arbitrary Excel templates into a managed master sheet, and using an LLM as a compiler that turns plain-language commands into structured spreadsheet operations — mapping intent to functions, never editing the source data directly.',
+              ]}
+              specs={[
+                { label: 'Role', value: 'AI consolidation + master-template generation' },
+                { label: 'Team', value: 'Product Space × WhiteHelmet' },
+                { label: 'Focus', value: 'Schema unification · NL→operations · template parsing' },
+                { label: 'Stack', value: 'Python · Claude · spreadsheet engine' },
+              ]}
+              links={[{ label: 'Case study', href: '/whitehelmet' }]}
+              logo={{ src: '/whitehelmet-icon.svg' }}
+              blob={{
+                colors: ['#2A2A30', '#3A3A42', '#4A4A52'],
+                position: { bottom: '-30%', right: '-10%' },
+                blur: '80px',
+                duration: 17,
+              }}
+            />
+
+            <ProjectCard
+              index="04"
+              category="Writing"
+              status="Coming soon"
+              title="Reading the Break"
+              tagline="The surf metaphor as epistemics — where reading a set wave, comping over changes, and inferring a latent belief state turn out to be the same move."
+              align="right"
+              body={[
+                "Not live yet — the writing project that sits under everything else here. Its bet is that rigor and feel aren't opposites but two sides of one operation: turning messy, ambient, ambiguous signal into something legible and trustworthy enough to act on — whether that signal is a shifting lineup, a chord change, or an agent's belief state. Launching with three pieces.",
+              ]}
+              essays={[
+                'Rigor and Feel Are the Same Operation — a manifesto',
+                'Where Belief Agent Came From — an origin story',
+                'Field Notes from the Lineup',
+              ]}
+              essaysLabel="Launching with"
+              links={[]}
+              blob={{
+                colors: ['#F97316', '#F59E0B'],
+                position: { top: '-25%', left: '10%' },
+                blur: '70px',
+                duration: 14,
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </main>
   )

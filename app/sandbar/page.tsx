@@ -1,9 +1,11 @@
 import { PipelineDiagram } from '@/components/sandbar/PipelineDiagram'
+import { SurfWindowTimeline } from '@/components/sandbar/SurfWindowTimeline'
+import { ScoringModules } from '@/components/sandbar/ScoringModules'
 import { Footer } from '@/components/ui/Footer'
 
 export const metadata = {
   title: 'Sandbar — Luke Cassiano',
-  description: 'Agentic surf forecasting: translating buoy data and NOAA grid forecasts into actionable surf predictions with 87% accuracy.',
+  description: 'Agentic surf forecasting: translating buoy data and NOAA grid forecasts into actionable, break-specific surf predictions.',
 }
 
 export default function SandbarPage() {
@@ -21,15 +23,26 @@ export default function SandbarPage() {
           </a>
 
           {/* Page h1 */}
-          <h1 className="wordmark" style={{ fontSize: 'clamp(36px, 6vw, 72px)', lineHeight: 1.1 }}>
+          <h1
+            className="wordmark"
+            style={{
+              fontSize: 'clamp(36px, 6vw, 72px)',
+              lineHeight: 1.1,
+              backgroundImage: 'linear-gradient(100deg, #F4A8C7 0%, #C4B5FD 50%, #93C5FD 100%)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              color: 'transparent',
+            }}
+          >
             Sandbar
           </h1>
 
-          {/* Hero stat block */}
-          <div className="flex flex-col gap-1 my-8">
-            <p className="wordmark" style={{ fontSize: 'clamp(36px, 6vw, 72px)', lineHeight: 1.1 }}>87%</p>
-            <p className="font-mono font-medium text-xs uppercase tracking-[0.08em]">FORECAST ACCURACY</p>
-          </div>
+          {/* Hero positioning */}
+          <p className="font-mono font-medium text-base leading-relaxed my-8 max-w-xl">
+            Agentic surf forecasting that reads a break like a local — translating buoy data
+            and NOAA grid forecasts into a spot-specific call on when to paddle out.
+          </p>
 
           {/* Section: Problem */}
           <section aria-labelledby="section-problem" className="py-16">
@@ -87,17 +100,18 @@ export default function SandbarPage() {
               Product
             </h2>
             <p className="font-mono font-medium text-base leading-relaxed mt-4">
-              Sandbar is a forecast agent that thinks like a local. It ingests live buoy observations and NOAA
-              grid forecasts, runs them through an ensemble model calibrated against historical spot behavior, and
-              returns a spot-specific call — wave height range, quality rating, and a confidence score. The
-              pipeline below traces that flow.
+              Sandbar&apos;s core output isn&apos;t a number — it&apos;s a timeline. For a given break it predicts
+              how surf quality rises and falls across the morning and marks the window actually worth paddling out
+              for. What a generic forecast flattens into &quot;4ft all day&quot; becomes a shape: fair at dawn,
+              building to a short best window, then declining as the tide or wind turns.
             </p>
+            <SurfWindowTimeline />
             <p className="font-mono font-medium text-base leading-relaxed mt-4">
-              The result is 87% forecast accuracy against observed conditions — measured against surfer reports
-              from the same sessions. That number isn&apos;t just a benchmark; it&apos;s a signal that the synthesis
-              is working, that the model has learned to weight sources the way an experienced local would.
+              Because the right wave depends on what you ride, every call is board-aware — the same morning can read
+              &quot;good&quot; on a log and &quot;poor&quot; on a shortboard. You describe your quiver once, and board
+              compatibility factors into the score from then on. The question Sandbar answers isn&apos;t &quot;what
+              are the conditions?&quot; — it&apos;s &quot;when should I paddle out?&quot;
             </p>
-            <PipelineDiagram />
           </section>
 
           {/* Section: Under the Hood */}
@@ -110,17 +124,24 @@ export default function SandbarPage() {
               Under the Hood
             </h2>
             <p className="font-mono font-medium text-base leading-relaxed mt-4">
-              The agentic pipeline ingests buoy observations and NOAA grid forecasts on a rolling schedule, runs
-              them through an ensemble model that weighs each source against historical spot behavior, then scores
-              the output for confidence. Low-confidence forecasts are flagged rather than hidden — if the model
-              isn&apos;t sure, the user should know that.
+              The agentic pipeline ingests buoy observations and NOAA grid forecasts on a rolling schedule,
+              reconciles them against historical spot behavior, then scores the output for confidence.
+              Low-confidence forecasts are flagged rather than hidden — if the model isn&apos;t sure, the user
+              should know that.
             </p>
+            <PipelineDiagram />
             <p className="font-mono font-medium text-base leading-relaxed mt-4">
-              The ensemble layer is where the intelligence lives. Rather than applying a single model uniformly,
-              it adapts its source weighting based on conditions — leaning on buoy data when swell is long-period
-              and well-organized, weighting NOAA grids more heavily when a system is still offshore. The goal is
-              to replicate the judgment a local surfer applies without requiring the years of observation that
-              judgment normally demands.
+              That score is a composite. Separate modules evaluate swell alignment, wind, tide, and learned break
+              behavior — each contributing to a single surf-quality score, then weighted by how well the conditions
+              suit the board you&apos;re on. It&apos;s the synthesis an experienced local does intuitively, made
+              explicit and repeatable.
+            </p>
+            <ScoringModules />
+            <p className="font-mono font-medium text-base leading-relaxed mt-4">
+              The ensemble adapts its source weighting to conditions — leaning on buoy data when swell is
+              long-period and well-organized, weighting NOAA grids more heavily when a system is still offshore.
+              The goal is to replicate the judgment a local surfer applies without requiring the years of
+              observation it normally demands.
             </p>
           </section>
 

@@ -7,22 +7,19 @@
   --color-cream: #F5F3EE;
   --color-ink: #1A1A1A;
 
-  /* Font families (next/font injects --font-fraunces / --font-mono on <html>) */
-  --font-serif: var(--font-fraunces);
+  /* Blob color stops */
+  --blob-sandbar-start: #F4A8C7;
+  --blob-sandbar-mid:   #C4B5FD;
+  --blob-sandbar-end:   #93C5FD;
 
-  /* Blob color stops — CSS vars, NOT Tailwind tokens */
-  --blob-sandbar-start: #F4A8C7; /* pink */
-  --blob-sandbar-mid:   #C4B5FD; /* lavender */
-  --blob-sandbar-end:   #93C5FD; /* blue */
+  --blob-belief-start:  #312E81;
+  --blob-belief-end:    #4ADE80;
 
-  --blob-belief-start:  #312E81; /* deep indigo */
-  --blob-belief-end:    #4ADE80; /* phosphor green */
+  --blob-white-start:   #D97706;
+  --blob-white-end:     #A8A29E;
 
-  --blob-white-start:   #D97706; /* ochre */
-  --blob-white-end:     #A8A29E; /* dust */
-
-  --blob-break-start:   #F97316; /* coral */
-  --blob-break-end:     #F59E0B; /* amber */
+  --blob-break-start:   #F97316;
+  --blob-break-end:     #F59E0B;
 }
 
 html {
@@ -30,11 +27,22 @@ html {
   color: var(--color-ink);
 }
 
-/* Fraunces wordmark: ball-terminal character via variation axes.
-   Not expressible in Tailwind utilities — use this class for wordmarks/hero. */
+@media (pointer: fine) {
+  html, a, button, [role="button"] {
+    cursor: none;
+  }
+}
+
 .wordmark {
-  font-family: var(--font-fraunces), Georgia, serif;
-  font-style: italic;
+  font-family: var(--font-syne), system-ui, sans-serif;
   font-weight: 800;
-  font-variation-settings: 'SOFT' 0, 'WONK' 1;
+  letter-spacing: -0.03em;
+  line-height: 1.0;
+}
+
+.name-display {
+  font-family: var(--font-syne), system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
 }
