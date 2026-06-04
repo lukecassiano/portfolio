@@ -34,12 +34,12 @@
 
 ### Sandbar Case Study
 
-- [ ] **SAND-01**: Case study page at /sandbar with sections: Problem, Insight, Product, Under the Hood, What's Next
-- [ ] **SAND-02**: Prose content constrained to max-w-2xl (~65ch) on all breakpoints
+- [x] **SAND-01**: Case study page at /sandbar with sections: Problem, Insight, Product, Under the Hood, What's Next
+- [x] **SAND-02**: Prose content constrained to max-w-2xl (~65ch) on all breakpoints
 - [x] **SAND-03**: Pipeline diagram as inline SVG React component (not image) with aria-label, <title>, visible at all viewport widths
-- [ ] **SAND-04**: Section headings in Fraunces; metadata/captions in IBM Plex Mono
-- [ ] **SAND-05**: Hero stat(s) as large Fraunces numerals matching Sandbar visual language
-- [ ] **SAND-06**: Back navigation to landing page
+- [x] **SAND-04**: Section headings in Fraunces; metadata/captions in IBM Plex Mono
+- [x] **SAND-05**: Hero stat(s) as large Fraunces numerals matching Sandbar visual language
+- [x] **SAND-06**: Back navigation to landing page
 
 ### Stub Pages
 
@@ -118,12 +118,12 @@
 | LAND-05 | Phase 2 — Landing Experience | Complete |
 | LAND-06 | Phase 2 — Landing Experience | Complete |
 | LAND-07 | Phase 2 — Landing Experience | Complete |
-| SAND-01 | Phase 3 — Sandbar Case Study & Stubs | Pending |
-| SAND-02 | Phase 3 — Sandbar Case Study & Stubs | Pending |
+| SAND-01 | Phase 3 — Sandbar Case Study & Stubs | Complete |
+| SAND-02 | Phase 3 — Sandbar Case Study & Stubs | Complete |
 | SAND-03 | Phase 3 — Sandbar Case Study & Stubs | Complete |
-| SAND-04 | Phase 3 — Sandbar Case Study & Stubs | Pending |
-| SAND-05 | Phase 3 — Sandbar Case Study & Stubs | Pending |
-| SAND-06 | Phase 3 — Sandbar Case Study & Stubs | Pending |
+| SAND-04 | Phase 3 — Sandbar Case Study & Stubs | Complete |
+| SAND-05 | Phase 3 — Sandbar Case Study & Stubs | Complete |
+| SAND-06 | Phase 3 — Sandbar Case Study & Stubs | Complete |
 | STUB-01 | Phase 3 — Sandbar Case Study & Stubs | Complete |
 | STUB-02 | Phase 3 — Sandbar Case Study & Stubs | Complete |
 | META-01 | Phase 4 — Polish, Meta & Deploy | Pending |

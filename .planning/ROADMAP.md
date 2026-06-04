@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [ ] **Phase 1: Foundation & Design System** - Scaffold, fonts, Lenis, GradientBlob, and all shared components
 - [ ] **Phase 2: Landing Experience** - Five full-viewport scenes with Framer Motion reveals
-- [ ] **Phase 3: Sandbar Case Study & Stubs** - Full /sandbar editorial page with SVG pipeline diagram, plus /belief-agent and /whitehelmet stubs
+- [x] **Phase 3: Sandbar Case Study & Stubs** - Full /sandbar editorial page with SVG pipeline diagram, plus /belief-agent and /whitehelmet stubs (completed 2026-06-04)
 - [ ] **Phase 4: Polish, Meta & Deploy** - OG image, all meta tags, print styles, a11y pass, and Vercel deploy
 
 ## Phase Details
@@ -87,5 +87,5 @@ Note: Phase 3 depends on Phase 1 only (not Phase 2) — Phases 2 and 3 can be wo
 |-------|----------------|--------|-----------|
 | 1. Foundation & Design System | 1/3 | In Progress|  |
 | 2. Landing Experience | 2/4 | In Progress|  |
-| 3. Sandbar Case Study & Stubs | 2/3 | In Progress|  |
+| 3. Sandbar Case Study & Stubs | 3/3 | Complete   | 2026-06-04 |
 | 4. Polish, Meta & Deploy | 0/? | Not started | - |
