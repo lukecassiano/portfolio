@@ -43,8 +43,8 @@
 
 ### Stub Pages
 
-- [ ] **STUB-01**: /belief-agent — hero scene with wordmark, blob, honest "case study in progress" framing (not just "coming soon")
-- [ ] **STUB-02**: /whitehelmet — same pattern as STUB-01
+- [x] **STUB-01**: /belief-agent — hero scene with wordmark, blob, honest "case study in progress" framing (not just "coming soon")
+- [x] **STUB-02**: /whitehelmet — same pattern as STUB-01
 
 ### Meta / SEO / Accessibility
 
@@ -124,8 +124,8 @@
 | SAND-04 | Phase 3 — Sandbar Case Study & Stubs | Pending |
 | SAND-05 | Phase 3 — Sandbar Case Study & Stubs | Pending |
 | SAND-06 | Phase 3 — Sandbar Case Study & Stubs | Pending |
-| STUB-01 | Phase 3 — Sandbar Case Study & Stubs | Pending |
-| STUB-02 | Phase 3 — Sandbar Case Study & Stubs | Pending |
+| STUB-01 | Phase 3 — Sandbar Case Study & Stubs | Complete |
+| STUB-02 | Phase 3 — Sandbar Case Study & Stubs | Complete |
 | META-01 | Phase 4 — Polish, Meta & Deploy | Pending |
 | META-02 | Phase 4 — Polish, Meta & Deploy | Pending |
 | META-03 | Phase 4 — Polish, Meta & Deploy | Pending |

@@ -4,13 +4,13 @@ milestone: v1.0
 milestone_name: milestone
 status: executing
 stopped_at: Completed 03-01-PLAN.md (PipelineDiagram component)
-last_updated: "2026-06-04T00:34:22.267Z"
+last_updated: "2026-06-04T00:34:42.668Z"
 last_activity: 2026-06-03 — Lenis smooth scroll provider complete; id=main-content confirmed
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 10
-  completed_plans: 8
+  completed_plans: 9
   percent: 67
 ---
 
@@ -30,7 +30,7 @@ Plan: 3 of 3 in current phase
 Status: In progress
 Last activity: 2026-06-03 — Lenis smooth scroll provider complete; id=main-content confirmed
 
-Progress: [███████░░░] 67%
+Progress: [█████████░] 90%
 
 ## Performance Metrics
 
@@ -57,6 +57,7 @@ Progress: [███████░░░] 67%
 | Phase 02-landing-experience P03 | 5min | 3 tasks | 3 files |
 | Phase 02-landing-experience P04 | 3min | 2 tasks | 1 files |
 | Phase 03-sandbar-case-study-stubs P01 | 5min | 1 tasks | 1 files |
+| Phase 03-sandbar-case-study-stubs P02 | 5min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -87,6 +88,9 @@ Recent decisions affecting current work:
 - [Phase 02-landing-experience]: Render order locked: Intro, Sandbar, Belief Agent, WhiteHelmet, Reading the Break, Footer in page.tsx
 - [Phase 03-sandbar-case-study-stubs]: PipelineDiagram: defs block placed after title (before rects) so marker is defined before first line reference — SVG rendering order correctness
 - [Phase 03-sandbar-case-study-stubs]: PipelineDiagram: named export (not default) matching import pattern in plan 03-03 app/sandbar/page.tsx
+- [Phase 03-sandbar-case-study-stubs]: Stub route pages are Server Components (no 'use client') — client boundary lives inside GradientBlob and SceneFadeIn leaf components
+- [Phase 03-sandbar-case-study-stubs]: h1 used as wordmark on standalone stub pages (not h2 as in landing scenes) — each stub is its own page with a single top-level heading
+- [Phase 03-sandbar-case-study-stubs]: WhiteHelmet stub inherits cream/ink global defaults — no bg-[#] or text- overrides on section, matching WhiteHelmetScene.tsx exactly
 
 ### Pending Todos
 
@@ -101,5 +105,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-06-04T00:34:22.264Z
-Stopped at: Completed 03-01-PLAN.md (PipelineDiagram component)
+Stopped at: Completed 03-02-PLAN.md (belief-agent and whitehelmet stub routes)
 Resume file: None

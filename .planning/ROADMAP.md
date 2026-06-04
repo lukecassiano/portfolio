@@ -61,8 +61,8 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. A back navigation element on /sandbar returns the visitor to the landing page
   5. /belief-agent and /whitehelmet each load a hero scene with blob, wordmark, and an honest "case study in progress" message — neither returns a 404
 **Plans**: 3 plans
-- [ ] 03-01-PLAN.md — PipelineDiagram inline SVG component (Wave 1)
-- [ ] 03-02-PLAN.md — /belief-agent and /whitehelmet stub pages (Wave 1)
+- [x] 03-01-PLAN.md — PipelineDiagram inline SVG component (Wave 1)
+- [x] 03-02-PLAN.md — /belief-agent and /whitehelmet stub pages (Wave 1)
 - [ ] 03-03-PLAN.md — /sandbar editorial case study page (Wave 2, depends on 03-01)
 
 ### Phase 4: Polish, Meta & Deploy
