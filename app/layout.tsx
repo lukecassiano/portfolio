@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { syne, ibmPlexMono } from '@/lib/fonts'
+import { syne, ibmPlexMono, fraunces, bagelFatOne } from '@/lib/fonts'
 import { LenisProvider } from '@/components/providers/LenisProvider'
 import { SkipLink } from '@/components/ui/SkipLink'
 import { CustomCursor } from '@/components/ui/CustomCursor'
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${ibmPlexMono.variable}`}
+      className={`${syne.variable} ${ibmPlexMono.variable} ${fraunces.variable} ${bagelFatOne.variable}`}
     >
       <body className="bg-cream text-ink antialiased">
         <SkipLink />

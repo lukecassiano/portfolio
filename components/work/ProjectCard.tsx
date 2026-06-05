@@ -35,6 +35,9 @@ interface ProjectCardProps {
   logo?: { src: string; alt?: string }
   essaysLabel?: string
   backdrop?: React.ReactNode
+  titleClassName?: string
+  titleSize?: string
+  titleStyle?: React.CSSProperties
 }
 
 export function ProjectCard({
@@ -53,6 +56,9 @@ export function ProjectCard({
   logo,
   essaysLabel = 'Recent essays',
   backdrop,
+  titleClassName = 'wordmark',
+  titleSize = 'clamp(34px, 5vw, 60px)',
+  titleStyle,
 }: ProjectCardProps) {
   const reduce = useReducedMotion()
   const dark = tone === 'dark'
@@ -114,7 +120,7 @@ export function ProjectCard({
 
         {/* Title + tagline */}
         <div className="flex flex-col gap-4">
-          <h3 className="wordmark" style={{ fontSize: 'clamp(34px, 5vw, 60px)', lineHeight: 1.0 }}>
+          <h3 className={titleClassName} style={{ fontSize: titleSize, lineHeight: 1.0, ...titleStyle }}>
             {title}
           </h3>
           <p

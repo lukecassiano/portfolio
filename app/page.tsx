@@ -22,8 +22,8 @@ export default function Home() {
               className="font-mono font-medium leading-snug max-w-2xl text-ink/90"
               style={{ fontSize: 'clamp(18px, 2.4vw, 28px)' }}
             >
-              Three products and a research project — each one about turning ambiguous
-              signal into something you can actually act on.
+              Products, a research project, and a writing series — each about turning
+              ambiguous signal and noise into something you can actually act on.
             </p>
           </header>
 
@@ -33,6 +33,8 @@ export default function Home() {
               category="Product"
               status="Live · Beta"
               title="Sandbar"
+              titleClassName="wordmark-serif lowercase"
+              titleSize="clamp(40px, 5.9vw, 70px)"
               tagline="Surf forecasting that tells you when to paddle out — not just what the conditions are."
               body={[
                 'Tools like Surfline dump raw swell, wind, and tide data and leave you to interpret it. Sandbar predicts surf-quality windows for a specific break, collapsing that data into a simple timeline — fair, good, best, declining — plus board-aware recommendations tuned to what you actually ride.',
@@ -90,11 +92,43 @@ export default function Home() {
 
             <ProjectCard
               index="03"
+              category="Product · Mobile"
+              status="MVP · WIP"
+              title="lineup."
+              titleClassName="wordmark-bagel"
+              titleStyle={{ color: '#c54f2d' }}
+              titleSize="clamp(32px, 4.6vw, 54px)"
+              tagline="Strava for surfing — a private journal and crew layer for the sessions, secret spots, and clips you only share with the people you actually surf with."
+              body={[
+                'Surfers already trade spots, sessions, and clips over iMessage and Instagram — the wrong tools for the job. Coordinates get buried in a thread; a public post broadcasts your home reef to forty thousand strangers. Lineup is the missing middle: a place for a crew of four-to-eight friends to share real intel without it being a chat blob or a public broadcast.',
+                "Every session log, dropped pin, and clip runs through one decision — private, crew, or community — with the crew tier as the center of gravity. Structured logs, a map that fills in as you collect spots, and lightweight personal streaks. Pointedly not a forecast tool: Lineup records what happened; Sandbar predicts what's coming. Today it's a working MVP on the web, headed for the iOS App Store.",
+              ]}
+              specs={[
+                { label: 'Role', value: 'Solo — product, design, build' },
+                { label: 'Focus', value: 'Private crews · session journal · spot map' },
+                { label: 'Model', value: 'Three privacy tiers — private / crew / community' },
+                { label: 'Status', value: 'MVP — web prototype live; iOS App Store next' },
+              ]}
+              links={[
+                { label: 'Live demo', href: 'https://lineup-app.up.railway.app/dashboard', external: true },
+                { label: 'Case study', href: '/lineup' },
+              ]}
+              blob={{
+                colors: ['#f2e0c4', '#d9a847', '#c54f2d', '#e6336d'],
+                position: { top: '-26%', right: '-12%' },
+                blur: '75px',
+                duration: 16,
+              }}
+            />
+
+            <ProjectCard
+              index="04"
               category="Product · Team"
               status="Contract"
               title="WhiteHelmet"
               tagline="AI that turns a mess of subcontractor spreadsheets into one master report you can trust."
               tone="dark"
+              align="right"
               body={[
                 'Built with a Product Space team for WhiteHelmet, a construction-intelligence platform. Project managers lose hours reconciling inconsistent subcontractor files into a single source of truth. The product, Salama, ingests heterogeneous sheets and consolidates them into one structured master dataset.',
                 'I owned AI consolidation and master-template generation: parsing arbitrary Excel templates into a managed master sheet, and using an LLM as a compiler that turns plain-language commands into structured spreadsheet operations — mapping intent to functions, never editing the source data directly.',
@@ -116,12 +150,12 @@ export default function Home() {
             />
 
             <ProjectCard
-              index="04"
+              index="05"
               category="Writing"
               status="Substack"
               title="Reading the Break"
+              titleClassName="wordmark-serif-book"
               tagline="On learning to read what the world doesn't spell out."
-              align="right"
               body={[
                 'Not live yet. When it launches, it’s where the threads pull together — where computer science, neuroscience, cognitive science, physics, and philosophy of mind meet and complete one another, with jazz, surfing, and machine learning in the same frame. One structure runs through them all: turning uncertainty into something legible, holding rigor and feel as one operation. Launching soon.',
               ]}
