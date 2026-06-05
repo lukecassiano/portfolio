@@ -27,10 +27,13 @@ html {
   color: var(--color-ink);
 }
 
-@media (pointer: fine) {
-  html, a, button, [role="button"] {
-    cursor: none;
-  }
+/* Hide the native cursor only when the custom cursor is actually active
+   (toggled from JS based on whether a precise pointer exists). */
+html.has-custom-cursor,
+html.has-custom-cursor a,
+html.has-custom-cursor button,
+html.has-custom-cursor [role="button"] {
+  cursor: none;
 }
 
 .wordmark {

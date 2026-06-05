@@ -14,18 +14,31 @@ export function CustomCursor() {
   const ringY = useSpring(mouseY, { stiffness: 120, damping: 18, mass: 0.5 })
 
   useEffect(() => {
-    if (window.matchMedia('(pointer: coarse)').matches) return
+    const root = document.documentElement
+    let activated = false
+
+    // The first real mouse movement is the most reliable proof that a
+    // precise pointer exists — no media queries to misreport it.
+    const activate = () => {
+      if (activated) return
+      activated = true
+      root.classList.add('has-custom-cursor')
+      setVisible(true)
+    }
 
     const onMove = (e: MouseEvent) => {
+      activate()
       mouseX.set(e.clientX)
       mouseY.set(e.clientY)
-      if (!visible) setVisible(true)
     }
 
     const onEnter = () => setHovered(true)
     const onLeave = () => setHovered(false)
 
     window.addEventListener('mousemove', onMove)
+    // Show the instant the pointer is over the page (e.g. right after
+    // navigating into a case study) — not only on deliberate movement.
+    window.addEventListener('mouseover', activate)
 
     const interactive = document.querySelectorAll('a, button, [role="button"]')
     interactive.forEach((el) => {
@@ -34,13 +47,15 @@ export function CustomCursor() {
     })
 
     return () => {
+      root.classList.remove('has-custom-cursor')
       window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('mouseover', activate)
       interactive.forEach((el) => {
         el.removeEventListener('mouseenter', onEnter)
         el.removeEventListener('mouseleave', onLeave)
       })
     }
-  }, [mouseX, mouseY, visible])
+  }, [mouseX, mouseY])
 
   if (!visible) return null
 
