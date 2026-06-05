@@ -54,13 +54,13 @@ export function CustomCursor() {
           y: mouseY,
           translateX: '-50%',
           translateY: '-50%',
-          width: 10,
-          height: 10,
+          width: 8,
+          height: 8,
         }}
       />
       {/* Ring — spring lag */}
       <motion.div
-        className="pointer-events-none fixed z-[9999] rounded-full border-2 border-white mix-blend-difference"
+        className="pointer-events-none fixed z-[9999] rounded-full border border-white mix-blend-difference"
         style={{
           x: ringX,
           y: ringY,
@@ -68,9 +68,9 @@ export function CustomCursor() {
           translateY: '-50%',
         }}
         animate={{
-          width: hovered ? 56 : 38,
-          height: hovered ? 56 : 38,
-          opacity: hovered ? 1 : 0.85,
+          width: hovered ? 56 : 36,
+          height: hovered ? 56 : 36,
+          opacity: hovered ? 0.8 : 0.5,
         }}
         transition={{ type: 'spring', stiffness: 300, damping: 25 }}
       />
