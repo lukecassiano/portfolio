@@ -91,7 +91,7 @@ export default function Home() {
             <ProjectCard
               index="03"
               category="Product · Team"
-              status="Case study"
+              status="Contract"
               title="WhiteHelmet"
               tagline="AI that turns a mess of subcontractor spreadsheets into one master report you can trust."
               tone="dark"
@@ -118,19 +118,21 @@ export default function Home() {
             <ProjectCard
               index="04"
               category="Writing"
-              status="Coming soon"
+              status="Substack"
               title="Reading the Break"
-              tagline="The surf metaphor as epistemics — where reading a set wave, comping over changes, and inferring a latent belief state turn out to be the same move."
+              tagline="On learning to read what the world doesn't spell out."
               align="right"
               body={[
-                "Not live yet — the writing project that sits under everything else here. Its bet is that rigor and feel aren't opposites but two sides of one operation: turning messy, ambient, ambiguous signal into something legible and trustworthy enough to act on — whether that signal is a shifting lineup, a chord change, or an agent's belief state. Launching with three pieces.",
+                'Not live yet. When it launches, it’s where the threads pull together — where computer science, neuroscience, cognitive science, physics, and philosophy of mind meet and complete one another, with jazz, surfing, and machine learning in the same frame. One structure runs through them all: turning uncertainty into something legible, holding rigor and feel as one operation. Launching soon.',
               ]}
               essays={[
-                'Rigor and Feel Are the Same Operation — a manifesto',
-                'Where Belief Agent Came From — an origin story',
-                'Field Notes from the Lineup',
+                'Physics × neuroscience',
+                'Cognitive science',
+                'Philosophy of mind',
+                'Music & improvisation',
+                'Machine learning',
               ]}
-              essaysLabel="Launching with"
+              essaysLabel="Themes"
               links={[]}
               blob={{
                 colors: ['#F97316', '#F59E0B'],
