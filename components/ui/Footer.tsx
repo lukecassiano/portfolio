@@ -17,6 +17,24 @@ export function Footer() {
         >
           LinkedIn
         </a>
+        <span aria-hidden="true" className="opacity-40">·</span>
+        <a
+          href="https://github.com/lukecassiano"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 hover:no-underline"
+        >
+          GitHub
+        </a>
+        <span aria-hidden="true" className="opacity-40">·</span>
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 hover:no-underline"
+        >
+          Résumé
+        </a>
       </nav>
     </footer>
   )

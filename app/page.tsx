@@ -1,14 +1,19 @@
 import { IntroScene } from '@/components/scenes/IntroScene'
 import { ProjectCard } from '@/components/work/ProjectCard'
 import { FlowingContours } from '@/components/belief/FlowingContours'
+import { Nav } from '@/components/ui/Nav'
 import { Footer } from '@/components/ui/Footer'
 
 export default function Home() {
   return (
     <main id="main-content">
-      <IntroScene />
+      <div className="relative">
+        <Nav />
+        <IntroScene />
+      </div>
 
       <section
+        id="work"
         aria-label="Selected Work"
         className="px-6 pt-16 pb-28 md:px-10 md:pt-28 md:pb-40"
       >
