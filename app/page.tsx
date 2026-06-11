@@ -39,6 +39,7 @@ export default function Home() {
               status="Live · Beta"
               title="Sandbar"
               titleClassName="wordmark-serif lowercase"
+              titleStyle={{ color: '#ffffff', fontStyle: 'normal', fontWeight: 800 }}
               titleSize="clamp(40px, 5.9vw, 70px)"
               tagline="Surf forecasting that tells you when to paddle out — not just what the conditions are."
               body={[
